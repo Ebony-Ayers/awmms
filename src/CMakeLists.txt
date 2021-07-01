@@ -1,5 +1,6 @@
 set(project_source_files
-  main.cpp
+  awmms.h
+  awmms.cpp
 )
 
-add_executable(${primary_target_name} ${project_source_files})
+add_library(${primary_target_name} ${project_source_files})
