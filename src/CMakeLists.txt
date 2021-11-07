@@ -1,6 +1,12 @@
 set(project_source_files
-  awmms.h
+  awmms.hpp
   awmms.cpp
+  chunkAllocator.hpp
+  chunkAllocator.inl
+  log2.hpp
+  log2.inl
+  accessParameterPack.hpp
+  cumulativeSumParameterPack.hpp
 )
 
 add_library(${primary_target_name} ${project_source_files})

@@ -11,7 +11,6 @@ include(cmake/PreventInSourceBuilds.cmake)
 
 # Link this 'library' to set the c++ standard / compile-time options requested
 string(CONCAT project_options_library ${primary_target_name} _project_options)
-message(>> ${project_options_library})
 add_library(${project_options_library} INTERFACE)
 
 #set the c++ standard required
