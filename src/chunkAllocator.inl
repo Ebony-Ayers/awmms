@@ -6,9 +6,9 @@ namespace awmms
 	{
 		template<size_t... stackSizes>
 		template<size_t stackNum>
-		constexpr void arrayOfStacks<stackSizes...>::push(void* element)
+		constexpr void ArrayOfStacks<stackSizes...>::push(void* element)
 		{
-			typedef arrayOfStacks<stackSizes...> thisT; 
+			typedef ArrayOfStacks<stackSizes...> thisT; 
 
 			if(m_stackIndexes[stackNum] < thisT::sm_stackSizes[stackNum])
 			{
@@ -18,9 +18,9 @@ namespace awmms
 		}
 		template<size_t... stackSizes>
 		template<size_t stackNum>
-		constexpr void* arrayOfStacks<stackSizes...>::pop()
+		constexpr void* ArrayOfStacks<stackSizes...>::pop()
 		{
-			typedef arrayOfStacks<stackSizes...> thisT; 
+			typedef ArrayOfStacks<stackSizes...> thisT; 
 			
 			if(AWMMS_EXPECT(this->m_stackIndexes[stackNum] == 0, false))
 			{
@@ -35,18 +35,18 @@ namespace awmms
 		}
 		template<size_t... stackSizes>
 		template<size_t stackNum>
-		constexpr void* arrayOfStacks<stackSizes...>::top()
+		constexpr void* ArrayOfStacks<stackSizes...>::top()
 		{
-			typedef arrayOfStacks<stackSizes...> thisT; 
+			typedef ArrayOfStacks<stackSizes...> thisT; 
 			
 			return this->m_container[thisT::sm_stackBottoms[stackNum] + this->m_stackIndexes[stackNum] - 1];
 		}
 
 		template<size_t... stackSizes>
 		template<size_t stackNum>
-		constexpr double arrayOfStacks<stackSizes...>::currentCapacity()
+		constexpr double ArrayOfStacks<stackSizes...>::currentCapacity()
 		{
-			typedef arrayOfStacks<stackSizes...> thisT; 
+			typedef ArrayOfStacks<stackSizes...> thisT; 
 			
 			size_t spaceLeft = thisT::sm_stackSizes[stackNum] - this->m_stackIndexes[stackNum];
 			size_t spaceTotal = thisT::sm_stackSizes[stackNum];

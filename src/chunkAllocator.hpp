@@ -6,6 +6,7 @@
 #include "log2.hpp"
 #include "accessParameterPack.hpp"
 #include "cumulativeSumParameterPack.hpp"
+#include "standardAllocatorInterface.hpp"
 
 
 namespace awmms
@@ -14,7 +15,7 @@ namespace awmms
 	namespace memoryManagement
 	{
 		template<size_t... stackSizes>
-		class arrayOfStacks
+		class ArrayOfStacks
 		{
 			public:
 				template<size_t stackNum>
